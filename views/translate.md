@@ -21,11 +21,11 @@ Biruni is designed to support all languages. Additionally, for developers, the w
 
 You can access page translation from the toolbar:
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption><p>Translate page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/translate-button.png" alt=""><figcaption><p>Translate page</p></figcaption></figure>
 
 Translate page left side has inputs and their labels where labels are the words being translated and the inputs themselves are the translation. Right side is readonly translation result.&#x20;
 
-<figure><img src="../.gitbook/assets/translate_page.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/translate-page.jpg" alt=""><figcaption></figcaption></figure>
 
 Translate page consists of three sections tabs:
 
@@ -113,17 +113,17 @@ You can replace any varchar2 text with `t('text')` making it translatable throug
 
 Basic translation we have seen above only translates to the current web application language selected. But If you want to translate the texts to the multiple languages at once use "Translate multiple" form the toolbar:
 
-<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption><p>Translate multiple</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/translate-multiple-button.png" alt=""><figcaption><p>Translate multiple</p></figcaption></figure>
 
 In the "Translate multiple" page text (words) on the left side are being translated to the languages on the right side:&#x20;
 
-<figure><img src="../.gitbook/assets/translate_mutiple.jpg" alt=""><figcaption><p>Translate multiple page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/translate-multiple-page.jpg" alt=""><figcaption><p>Translate multiple page</p></figcaption></figure>
 
 ### Add/remove languages
 
 In order to add languages to the form (remove languages from the form) navigate to "Settings" and select the languages needed for translation:
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption><p>Translate mutiple settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/translate-multiple-settings.png" alt=""><figcaption><p>Translate mutiple settings</p></figcaption></figure>
 
 * **view** — enable this to add language to "Translate multiiple" form (gives readonly access)
 * **edit** — makes the langage editable

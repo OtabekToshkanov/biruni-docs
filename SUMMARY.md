@@ -2,11 +2,15 @@
 
 ## Overview
 
-* [Page 1](README.md)
+* [Overview](overview/README.md)
 
 ## Getting started
 
-* [Page 2](getting-started/page-2.md)
+* [Getting Started](getting-started/README.md)
+  * [Quickstart](getting-started/quickstart/README.md)
+  * [Maven Setup Guide](getting-started/quickstart/maven-setup-guide.md)
+  * [Tomcat Deployment Guide](getting-started/quickstart/tomcat-deployment-guide.md)
+  
 
 ## Group 1
 
@@ -18,7 +22,12 @@
 
 ## Views
 
-* [Page 5](views/page-5.md)
+* [Views](README.md)
+  * [Forms (view)](views/forms-view/README.md)
+    * [Form HTML File](views/forms-view/form-html-file.md)
+  * [Routing](views/routing.md)
+  * [Tour](views/tour.md)
+  * [Translate](views/translate.md)
 
 ## Dev module
 

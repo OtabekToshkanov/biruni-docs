@@ -6,19 +6,19 @@ icon: newspaper
 
 Tour is a developer tool that helps to create navigation guide for the form. It is accessible in the **Developer toolbar**:
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/tour-create-tour.png" alt=""><figcaption></figcaption></figure>
 
 ## Create the tour
 
 The tour may include one or more steps, depending on the level of explanation required for the form. Each step consists of an element, title, description, and the position of the popup modal.
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/tour-page.png" alt=""><figcaption></figcaption></figure>
 
 Once you create a tour new button appreas in the **Developer toolbar**:
 
 Click the "**Show Tour**" button to navigate through each step of the tour.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/tour-start-button.png" alt=""><figcaption></figcaption></figure>
 
 ## Element selection
 
@@ -46,4 +46,4 @@ Selection by id example:
 
 This video provides a quick overview of the tour mechanism:
 
-{% file src="../.gitbook/assets/user_list (1).webm" %}
+{% file src="../.gitbook/assets/views/route-guide.webm" %}

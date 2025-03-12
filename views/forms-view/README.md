@@ -23,11 +23,11 @@ In Biruni-based projects, every page is considered a form (except authentication
 
 1. Navigate to **Developer > Forms > Forms**, open the menu:
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption><p>Developer menu</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-navigation.png" alt=""><figcaption><p>Developer menu</p></figcaption></figure>
 
 2. Click **Add** button and there you will see form creating page:
 
-<div align="center"><figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption><p>Deveoper form list page</p></figcaption></figure></div>
+<div align="center"><figure><img src="../../.gitbook/assets/views/forms-create-form.png" alt=""><figcaption><p>Deveoper form list page</p></figcaption></figure></div>
 
 After successfully creating a new form, a unique path code will be generated for it. The path code always begins with the current project code (e.g., `biruni19`). It plays a crucial role in integrating with Oracle PL/SQL UI packages.
 
@@ -35,15 +35,15 @@ After successfully creating a new form, a unique path code will be generated for
 
 Every form created manally can access this form page below:
 
-<figure><img src="../../.gitbook/assets/form.png" alt=""><figcaption><p>Form page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-form-info.png" alt=""><figcaption><p>Form page</p></figcaption></figure>
 
 ### Form
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-full-url.png" alt=""><figcaption></figcaption></figure>
 
 In the example above, the full URL of the form is given. The section highlighted in yellow represents the **Path prefix**, followed by the F**orm path**, which is highlighted in red.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-form-path.png" alt=""><figcaption></figcaption></figure>
 
 ```
 /project_code/module_name/form_name
@@ -122,7 +122,7 @@ By default, the access position is set to "None", which does not allow the creat
 
 When access position is set to "Form" you can use template forms. There are mutiple pre-build template forms to simplify the development further.
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption><p>Template forms</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-template-form.png" alt=""><figcaption><p>Template forms</p></figcaption></figure>
 
 You can select a template based on the form type and it generates `.html` file in the specified [path](./#form). Each template includes clear instructions on creating basic list, view, audit, add/edit, and report forms.
 
@@ -140,7 +140,7 @@ The functionalities of the form can be flagged by these options:
 
 From the footer of the [form page](./#form-page) you can add form actions with **Plus** button
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-form-actions.png" alt=""><figcaption></figcaption></figure>
 
 There are two types of form actions and both of them enables role-based control:
 
@@ -156,7 +156,7 @@ There are two types of form actions and both of them enables role-based control:
 
 Form siblings allow you to attach other forms to the current form, enabling quick navigation when working with multiple related forms.
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/views/forms-sibling-forms.png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="form-html-file.md" %}
 [form-html-file.md](form-html-file.md)

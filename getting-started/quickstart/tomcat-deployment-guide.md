@@ -93,13 +93,13 @@ biruni.dev.projects-folder=YOUR_PROJECTS_LOCATION
     2. Run <mark style="color:orange;">**`tomcat10.exe`**</mark>
     3. Wait for the "Server startup" log message showing startup time
 
-    <figure><picture><source srcset="../.gitbook/assets/q2.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/q3.png" alt=""></picture><figcaption></figcaption></figure>
+    <figure><picture><source srcset="../../.gitbook/assets/getting-started/quickstart/tomcat-console-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/getting-started/quickstart/tomcat-console-white.png" alt=""></picture><figcaption></figcaption></figure>
 2.  Access application
 
     1. Open your web browser
     2. Enter URL: <mark style="color:orange;">**`http://localhost:8080/YOUR_PROJECT_NAME`**</mark>&#x20;
 
-    <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/getting-started/quickstart/login.png" alt=""><figcaption></figcaption></figure>
 3. [Log in as admin](../#log-in-as-admin-using)
 {% endstep %}
 {% endstepper %}
@@ -114,7 +114,7 @@ biruni.dev.projects-folder=YOUR_PROJECTS_LOCATION
 
 #### Missing external java libraries
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/getting-started/quickstart/library-missing.png" alt=""><figcaption></figcaption></figure>
 
 Make sure you have [installed libraries](tomcat-deployment-guide.md#application-installation) correctly
 

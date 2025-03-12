@@ -28,11 +28,11 @@ There are two ways of creating new routes:
 
 1. Navigate to **Developer > Forms > Routes**, open the menu:
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Developer menu</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-navigation.png" alt=""><figcaption><p>Developer menu</p></figcaption></figure>
 
 2. Click the **Add** button to open the route creation page:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Developer route list page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-create-route.png" alt=""><figcaption><p>Developer route list page</p></figcaption></figure>
 
 {% hint style="info" %}
 It is recommended to create & modify routes [from form info](routing.md#from-form-info) as it provides a more flexible approach
@@ -44,11 +44,11 @@ It is recommended to create & modify routes [from form info](routing.md#from-for
 2. Go to form info from developer toolbar
 3. Navigate to Route tab:
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Form info page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-from-form-info.png" alt=""><figcaption><p>Form info page</p></figcaption></figure>
 
 Here by linking a URI action path to an action within the Oracle packages, a new route is created. Additionally, the route can be modified in the route settings, as shown in the image.
 
-<figure><img src="../.gitbook/assets/form_route_tab.jpg" alt=""><figcaption><p>Form info route tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-form-info-route-tab.jpg" alt=""><figcaption><p>Form info route tab</p></figcaption></figure>
 
 #### URI Action Path
 
@@ -73,7 +73,7 @@ When triggered, the action executes a function or procedure in Oracle packages b
 
 This page is responsible for route settings of any route:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-page.png" alt=""><figcaption></figcaption></figure>
 
 ### Uri
 
@@ -129,7 +129,7 @@ Balancer settings:
 * **Balancer timeout**: Defines how long a request waits (60-1800 seconds).
 * **Maximum execution time**: Limits request execution time (60-7200 seconds).
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption><p>Route balancer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/views/routes-balancer.png" alt=""><figcaption><p>Route balancer</p></figcaption></figure>
 
 ### Log policy
 
