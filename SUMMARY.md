@@ -1,15 +1,15 @@
 # Table of contents
 
-* [README](README.md)
-
 ## Overview
 
 * [Introduction](overview/README.md)
+* [Features](overview/features.md)
+* [System Requirements](overview/system-requirements.md)
 
 ## Getting started
 
-* [Maven Setup Guide](getting-started/maven-setup-guide.md)
-* [Tomcat Deployment Guide](getting-started/tomcat-deployment-guide.md)
+* [Maven Setup Guide](getting-started/quickstart/maven-setup-guide.md)
+* [Tomcat Deployment Guide](getting-started/quickstart/tomcat-deployment-guide.md)
 
 ## Data / Business Logic
 
