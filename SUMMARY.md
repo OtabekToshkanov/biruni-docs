@@ -66,3 +66,11 @@
     * [System level](security/security/oauth2/api-oauth2.md)
     * [Company level](security/security/oauth2/oauth2.md)
   * [Licensing](security/licensing.md)
+
+## ADVANCED TOPICS
+
+* [App server](advanced-topics/app-server/README.md)
+  * [Reports](advanced-topics/app-server/reports/README.md)
+    * [Biruni report](advanced-topics/app-server/reports/biruni-report.md)
+    * [Easy report](advanced-topics/app-server/reports/easy-report.md)
+    * [Lazy report](advanced-topics/app-server/reports/lazy-report.md)
