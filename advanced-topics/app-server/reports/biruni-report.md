@@ -63,24 +63,162 @@ Tables are created using the `b_table` object type. Since it is an object type, 
 ```plsql
 test_table b_Table := b_Report.New_Table();
 -- or
-test_table b_Table := b_Report.New_Table(i_Parent => parent_table);
+test_table b_Table := b_Report.New_Table(i_Parent => /* parent_table */);
 ```
 
 {% hint style="info" %}
 When a table is created using a parent parameter, the child table inherits the current style of its parent.
 {% endhint %}
 
+### Inserting data into table
 
+In `b_table`, data insertion follows a structured sequence. You need to create the row to access the next row and write into its cells.
 
-### Creating rows
+> For the following code blocks we will use `a b_Table = b_Report.New_Table();` instance.
 
-### Creating cells
+#### Creating new row
+
+```plsql
+a.New_Row();
+-- or
+a.New_Row(i_Height => /* number */);
+```
+
+When a new row is created, the cursor moves to the first cell of the next row.
+
+#### Writing data
+
+```plsql
+a.Data('test-data');
+```
+
+This procedure performs two actions:
+
+* Inserts data into the current cursor cell.
+* Moves the cursor one cell to the right.
+
+There are several ways to insert data into a cell, which will be covered [here](biruni-report.md#data).
+
+{% hint style="warning" %}
+When a table is newly created, data cannot be inserted immediately. Ensure that at least one row is created first before adding any data.
+{% endhint %}
+
+#### Visual example
+
+The image illustrates how the cursor moves. When a new row is created using `New_Row()`, the cursor moves to the beginning of that row. Each `Data()` command inserts a value into the current cell and then shifts the cursor one cell to the right.
 
 <figure><img src="../../../.gitbook/assets/b_table.png" alt=""><figcaption></figcaption></figure>
 
+### Page settings
+
+Outside of the table data, additional settings allow us to adjust the table structure and page layout, such as column width and page breaks.
+
+#### Column width
+
+```plsql
+a.Column_Width(i_Column_Index => /* number */,
+                      i_Width => /* number */);
+```
+
+{% hint style="info" %}
+It is recommended to set the column width before inserting data into the table to maintain better code control over time and keep all structural configurations in one place for easier management.
+{% endhint %}
+
+#### Page breaks
+
+Page breaks in Biruni Report are used to separate the table across standard paper sizes (e.g., A4, A5, Letter).
+
+```plsql
+a.Page_Break(/* parameters */);
+```
+
+Each parameter is nullable and take `boolean`. To enable it, set the value to `true`.
+
+<table><thead><tr><th width="260">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><p>i_Row_Break</p><p>i_Column_Break</p></td><td>Puts row/column break</td></tr><tr><td><p>i_Row_Breakable</p><p>i_Column_Breakable</p></td><td>If the data between the previous row breakable and the current row breakable does not fit to the page size, a row/column break is inserted; otherwise, row/column breaks are skipped.</td></tr></tbody></table>
+
+### Add sheet to the report
+
+After completing the table, you need to add it to the report using the `Add_Sheet` method of `biruni_report`. Here’s how:
+
+```plsql
+biruni_Report.Add_Sheet(i_Name  => /* name */,
+                        p_Table => /* table */,
+                        /* other parameters */);
+```
+
+The `i_Name` and `p_Table` parameters are required, while all other parameters are nullable.
+
+#### Parameters
+
+<table><thead><tr><th>Parameter</th><th width="257">Description</th><th>Sample input</th></tr></thead><tbody><tr><td>i_Name</td><td>Accepts <code>varchar2</code>, table name</td><td><code>test_name</code></td></tr><tr><td>i_Table</td><td>It accepts a <code>b_Table</code> object, and once added to the sheet, it will be closed and no longer usable.</td><td></td></tr><tr><td>i_Param</td><td>Takes <code>varchar2</code></td><td></td></tr><tr><td>i_Zoom</td><td>Takes a number between 25 and 100 to set the zoom level in percentages in the Excel.</td><td><code>50</code></td></tr><tr><td>i_No_Gridlines</td><td><code>boolean</code> type; when set to <code>false</code>, the report prints with Excel's cell gridlines.</td><td><code>false</code></td></tr><tr><td><p>i_Split_Horizontal</p><p>i_Split_Vertical</p></td><td>Both accept a number, and when the split feature is enabled in Excel, the table will be divided into four sections based on the specified number of cells.</td><td><code>5</code></td></tr><tr><td><p>i_Page_Header</p><p>i_Page_Footer</p><p>i_Page_Top</p><p>i_Page_Bottom</p><p>i_Page_Left</p><p>i_Page_Right</p></td><td>All are of type <code>number</code> and set the respective spacing for each value when printing in Excel.</td><td><code>10</code></td></tr><tr><td>i_Fit_To_Page</td><td><code>boolean</code> type; when set to <code>true</code>, it enables Excel's "Fit to Page" feature.</td><td><code>true</code></td></tr><tr><td>i_Landscape</td><td><code>boolean</code> type and makes page landscapge in Excel</td><td><code>true</code></td></tr><tr><td>i_Hidden</td><td><code>boolean</code> type; when set to <code>true</code>, it hides the sheet from the Excel UI.</td><td><code>true</code></td></tr><tr><td>i_Wrap_Merged_Cells</td><td><code>boolean</code> type; when set to <code>true</code>, merged cells will have the wrap text option enabled in Excel.</td><td><code>true</code></td></tr></tbody></table>
+
+
+
 ## Data
 
-TODO
+We will explore various methods of inserting data into a cell:
+
+* empty data
+* text data
+* table data
+* image data
+
+> For the following code blocks we will use `a b_Table = b_Report.New_Table();` instance.
+
+### Empty data
+
+```plsql
+a.Data();
+-- or
+a.Add_Data(i_Count => /* count */);
+```
+
+These procedures insert empty data while preserving the current table style.
+
+Use the `Add_Data` procedure to skip multiple cells.
+
+### Text data
+
+```plsql
+a.Data(i_Val => /* value */, /* parameters */);
+```
+
+Only `i_Val` is required; all other parameters are optional.
+
+#### Paremeters
+
+| Parameter                        | Description                                                                                                                            | Sample input                                                                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| i\_Val                           | There are four overloaded versions of this procedure, accepting the following data types: `number`, `varchar2`, `date` and `timestamp` | <p>number: <code>10</code></p><p>varchar2: <code>test</code></p><p>date: <code>sysdate</code></p><p>timestamp: <code>localtimestamp</code></p> |
+| i\_Style\_Name                   | Accepts `varchar2`and applies a style to the cell itself.                                                                              | `footer`                                                                                                                                       |
+| <p>i_Colspan</p><p>i_Rowspan</p> | Takes `number`, merges cells horizontally and vertically                                                                               | `3`                                                                                                                                            |
+| i\_Param                         | Takes `varchar2`                                                                                                                       |                                                                                                                                                |
+| i\_Menu\_Ids                     | `varchar2`                                                                                                                             |                                                                                                                                                |
+
+### Table data
+
+A table can be inserted into another table using the following procedure:
+
+```plsql
+a.Data(p_Val => /* table */);
+```
+
+`p_Val` is a only parameter and it is required.
+
+{% hint style="info" %}
+The table is not placed within a single cell; instead, it merges surrounding cells to match the inner table's dimensions.
+{% endhint %}
+
+### Image data
+
+There is a generic procedure for inserting any type of image data, as well as specific ones designed for different purposes:
+
+#### Generic image data
+
+```
+```
+
+
 
 ## Styles
 
