@@ -54,7 +54,23 @@ Biruni's report structure is organized into a hierarchical format, ensuring clea
 
 ## Tables
 
+The Biruni reports core component is the table. A table can be considered a spreadsheet that organizes data into rows and columns while also providing various customization options for formatting, layout, and printing.
+
 ### Creating table
+
+Tables are created using the `b_table` object type. Since it is an object type, we instantiate it through `b_report` to define the table:
+
+```plsql
+test_table b_Table := b_Report.New_Table();
+-- or
+test_table b_Table := b_Report.New_Table(i_Parent => parent_table);
+```
+
+{% hint style="info" %}
+When a table is created using a parent parameter, the child table inherits the current style of its parent.
+{% endhint %}
+
+
 
 Creating rows
 
