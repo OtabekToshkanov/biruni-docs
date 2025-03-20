@@ -72,9 +72,11 @@ When a table is created using a parent parameter, the child table inherits the c
 
 
 
-Creating rows
+### Creating rows
 
-Creating cells
+### Creating cells
+
+<figure><img src="../../../.gitbook/assets/b_table.png" alt=""><figcaption></figcaption></figure>
 
 ## Data
 
