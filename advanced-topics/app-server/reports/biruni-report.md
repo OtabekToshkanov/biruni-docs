@@ -215,10 +215,73 @@ There is a generic procedure for inserting any type of image data, as well as sp
 
 #### Generic image data
 
-```
+```plsql
+a.Add_Image(i_Cell_Type => /* type */,
+            /* parameters */);
 ```
 
+`i_Cell_Type` and `i_Val` are required parameters, while all others are optional.
 
+`i_Style_Name`, `i_Collspan`, and `i_Rowspan` are described [here](biruni-report.md#text-data) and are not included in the following table.
+
+<table><thead><tr><th width="170.5999755859375">Parameter</th><th>Description</th><th>Sample</th></tr></thead><tbody><tr><td>i_Cell_Type</td><td>Takes a single-letter <code>varchar2</code> value and selects the corresponding image type.</td><td><p>Image: <code>I</code></p><p>Barcode: <code>B</code></p></td></tr><tr><td>i_Val</td><td>Accepts a <code>varchar2</code> value and contains image data.</td><td><code>test_barcode</code></td></tr><tr><td>i_Width</td><td><code>number</code> data type and sets width of the output image</td><td><code>400</code></td></tr><tr><td>i_Height</td><td>number data type and sets height of the output imag</td><td><code>300</code></td></tr><tr><td>i_Keep_Ratio</td><td><code>boolean</code> data type and if set <code>true</code>, maintains the image's aspect ratio while fitting within the given width and height. Default: <code>true</code>.</td><td><code>false</code></td></tr><tr><td>i_Format</td><td>Accepts <code>varchar2</code> data type and  specifies the output format of the image, choosing from JPG, JPEG, PNG, BMP, or GIF. If an incorrect value is provided, gets default value JPG.</td><td><code>png</code></td></tr><tr><td>i_Label</td><td>Accepts <code>varchar2</code> and used for Barcode images</td><td><code>test_label</code></td></tr></tbody></table>
+
+#### Image data
+
+Alternative to `a.Add_Image(i_Cell_Type ⇒ 'I', i_Val ⇒ 'sha256', ...)`;
+
+```plsql
+a.Image(i_Sha        => /* i_Val of Add_Image */,
+        i_Style_Name => /* style */,
+        i_Colspan    => /* number of cols */,
+        i_Rowspan    => /* number of rows */,
+        i_Width      => /* width in pixels */,
+        i_Height     => /* height in pixels */,
+        i_Keep_Ratio => /* boolean, aspect ratio */,
+        i_Format     => /* image format type */);
+```
+
+The `i_Sha` parameter represents the hash code of the original image, retrieved from the `biruni_files` table.
+
+#### Barcode
+
+Alternative to `a.Add_Image(i_Cell_Type ⇒ 'B', i_Val ⇒ 'test_barcode', ...)`;
+
+```plsql
+a.Barcode(i_Text       => /* barcode text data */,
+          i_Style_Name => /* style */,
+          i_Colspan    => /* number of cols */,
+          i_Rowspan    => /* number of rows */,
+          i_Width      => /* width in pixels */,
+          i_Height     => /* height in pixels */,
+          i_Label      => /* barcode label */);
+```
+
+#### Qrcode
+
+```plsql
+a.Qrcode(i_Text       => /* qrcode text data */,
+          i_Style_Name => /* style */,
+          i_Colspan    => /* number of cols */,
+          i_Rowspan    => /* number of rows */,
+          i_Width      => /* width in pixels */,
+          i_Height     => /* height in pixels */);
+```
+
+Alternative to `a.Add_Image(i_Cell_Type ⇒ 'Q', i_Val ⇒ 'test_qrcode', ...)`;
+
+#### Gs1\_Data\_Matrix
+
+Alternative to `a.Add_Image(i_Cell_Type ⇒ 'M', i_Val ⇒ 'test_matrix', ...)`;
+
+```plsql
+a.Gs1_Data_Matrix(i_Text       => /* gs1 matrix text data */,
+                  i_Style_Name => /* style */,
+                  i_Colspan    => /* number of cols */,
+                  i_Rowspan    => /* number of rows */,
+                  i_Width      => /* width in pixels */,
+                  i_Height     => /* height in pixels */);
+```
 
 ## Styles
 
