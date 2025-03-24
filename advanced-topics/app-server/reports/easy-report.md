@@ -100,11 +100,87 @@ Additionally, child items can also use this procedure since they follow the same
 
 ## Data
 
-We have created definition keywords based on business logic; now, we must also provide data for each keyword. Otherwise, creating such definition keywords would be pointless.
+Definition keywords have been created based on business logic, and data must now be provided for each keyword. Without this, the creation of such definition keywords would serve no purpose.
 
-The root data object is `Gmap` data type and it contains values attached to each definition keyword, for example:
+The main data object is `Gmap` data type and contains values associated with each definition keyword. Three types of data can be attached to the keywords: scalar, list, image.
 
+### Scalar data
 
+PL/SQL scalar data types include VARCHAR2, BOOLEAN, NUMBER, DATE, and others. These data types can be easily assigned using the `put` member method of the `Gmap` type, as shown below:
+
+<pre class="language-plsql"><code class="lang-plsql">---- declare
+<strong>v_data Gmap := Gmap;
+</strong>---- body
+v_data.put('test_varchar2', 'test_data'); -- varchar2
+v_data.put('test_number', 10);            -- number
+v_data.put('test_boolean', true);         -- boolean
+v_data.put('test_date', sysdate);         -- date
+</code></pre>
+
+### List data
+
+If a definitions item contains an `items` field, it should be treated as list data. Each entry within the items field is itself a definition, meaning it is also `Gmap` data type.
+
+List consists of `Gmap` objects, and this list itself represented by the `Glist` data type.
+
+```plsql
+---- declare
+v_data      Gmap := Gmap;
+v_list      Glist := Glist;
+v_list_item Gmap;
+---- body
+-- first list item
+v_list_item := Gmap;
+v_list_item.put('item_1_1', 'test_data');
+v_list_item.put('item_1_2', 'test_data');
+v_list_item.put('item_1_3', 'test_data');
+v_list.push(v_list_item.Val);
+-- second list item
+v_list_item := Gmap;
+v_list_item.put('item_2_1', 'test_data');
+v_list_item.put('item_2_2', 'test_data');
+v_list.push(v_list_item.Val);
+
+data.put('test_list', v_list);
+```
+
+### Image data
+
+Easy Report supports three types of image data:
+
+* photo
+* barcode
+* qrcode
+
+To use image data, a `Gmap` object must be assigned to a keyword with specific fields.&#x20;
+
+```plsql
+---- declare
+v_data    Gmap := Gmap;
+v_photo   Gmap := Gmap;
+v_barcode Gmap := Gmap;
+v_qrcode  Gmap := Gmap;
+---- begin
+-- photo
+v_photo.put('type', 'photo');          -- required for photo
+v_photo.put('value', /* sha256 */);    -- sha hashcode of image
+-- barcode
+v_barcode.put('type', 'barcode');      -- required for barcode image
+v_barcode.put('value', /* input */);   -- input source generated into barcode
+v_barcode.put('width', /* number */);  -- width of the barcode image
+v_barcode.put('height', /* number */); -- height of the barcode image
+-- qrcode
+v_barcode.put('type', 'qrcode');       -- required for qrcodeimage
+v_barcode.put('value', /* input */);   -- input source generated into qrcode
+v_barcode.put('width', /* number */);  -- width of the qrcode image
+v_barcode.put('height', /* number */); -- height of the qrcode image
+
+v_data.put('test_photo', v_photo);
+v_data.put('test_barcode', v_barcode);
+v_data.put('test_qrcode',, v_qrcode);
+```
+
+The default width and height for all image types are set to `200`.
 
 ## Template
 
