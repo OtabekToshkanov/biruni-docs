@@ -37,16 +37,16 @@ end;
 2. The function returns a `Lazy_Report` type, which contains a unique ID to identify the report.
 3. This ID is used to check the report's status and download it once ready.
 
-### **Report Statuses**
+## **Report Statuses**
 
 A Lazy Report can have one of the following four statuses:
 
-* **NEW** – The report request has been created but has not started execution.
-* **EXECUTING** – The report is currently being generated.
-* **COMPLETED** – The report has been successfully generated and is ready for download.
-* **FAILED** – The report generation has failed.
+* **NEW** — The report request has been created but has not started execution.
+* **EXECUTING** — The report is currently being generated.
+* **COMPLETED** — The report has been successfully generated and is ready for download.
+* **FAILED** — The report generation has failed.
 
-### **Data Storage**
+## **Data Storage**
 
 * Lazy Report data is stored in the **`biruni_lazy_report_register`** table.
 * Additional reference data is stored in the **`md_lazy_report_register`** table.
@@ -56,14 +56,14 @@ A Lazy Report can have one of the following four statuses:
 
 Lazy reports can be managed from the Lazy report list page (`/biruni/md/lazy_report_list`). This page provides an overview of all reports and their statuses, allowing you to track, download, or delete them as needed.
 
-### **Waiting and Notifications**
+## **Waiting and Notifications**
 
 * By default, the user waits up to **60 seconds** for the report to generate.
 * If the report is completed within this time, it is downloaded instantly.
 * If the report is not ready within **60 seconds**, the user is notified that it is being generated in the background. The user can continue working within the application.
 * Once the report is generated, the user receives a notification and can download it.
 
-### **Limitations**
+## **Limitations**
 
 * A user can generate only **one** Lazy Report at a time for each report type.
 * If a user tries to generate another Lazy Report while one is still in progress, they are notified that another report is being generated. The user can continue working without interruption.

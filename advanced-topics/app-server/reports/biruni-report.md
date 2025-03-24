@@ -1,5 +1,16 @@
 ---
 icon: table-cells
+layout:
+  title:
+    visible: false
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Biruni report
@@ -37,6 +48,10 @@ After opening report it should be closed at the end using `b_Report.Close_Book`&
 There cannot be opened more than one workbook at a time
 {% endhint %}
 
+### Report types
+
+<table><thead><tr><th width="160">Output</th><th width="122" align="center">Report type</th><th width="320">Description</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Excel</td><td align="center">xlsx</td><td>Report data is displayed across table rows and columns.</td><td align="center">.xlsx</td></tr><tr><td>Html</td><td align="center">html</td><td>An HTML document where data is displayed using the <code>&#x3C;table></code> tag, with multiple sheets organized into navigation tabs (<code>&#x3C;ul></code> with <code>&#x3C;li></code>). Each tab functions as a separate sheet.</td><td align="center">.html</td></tr><tr><td>Html Mobile</td><td align="center">htmlm</td><td>Responsive html code for mobile devices</td><td align="center">.html</td></tr><tr><td>Html Style</td><td align="center">htmls</td><td></td><td align="center">.html</td></tr><tr><td>Html Debug</td><td align="center">htmld</td><td>Html used for Debug</td><td align="center">.html</td></tr><tr><td>Html JOD</td><td align="center">htmljod</td><td>Converted from excel report using JODConverter</td><td align="center">.html</td></tr><tr><td>PDF</td><td align="center">pdf</td><td>Converted from excel report using JODConverter</td><td align="center">.pdf</td></tr><tr><td>CSV</td><td align="center">csv</td><td>Comma Separated Value(s)</td><td align="center">.csv</td></tr><tr><td>XML</td><td align="center">xml</td><td></td><td align="center">.xml</td></tr></tbody></table>
+
 ### Report hierarchy
 
 Biruni's report structure is organized into a hierarchical format, ensuring clear data representation and styling control:
@@ -47,10 +62,6 @@ Biruni's report structure is organized into a hierarchical format, ensuring clea
 * **Cell** — The smallest unit where data is written and styles are applied.
 
 <figure><img src="../../../.gitbook/assets/b_report_hierarchy.png" alt=""><figcaption></figcaption></figure>
-
-### Report types
-
-<table><thead><tr><th width="160">Output</th><th width="122" align="center">Report type</th><th width="320">Description</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Excel</td><td align="center">xlsx</td><td>Report data is displayed across table rows and columns.</td><td align="center">.xlsx</td></tr><tr><td>Html</td><td align="center">html</td><td>An HTML document where data is displayed using the <code>&#x3C;table></code> tag, with multiple sheets organized into navigation tabs (<code>&#x3C;ul></code> with <code>&#x3C;li></code>). Each tab functions as a separate sheet.</td><td align="center">.html</td></tr><tr><td>Html Mobile</td><td align="center">htmlm</td><td>Responsive html code for mobile devices</td><td align="center">.html</td></tr><tr><td>Html Style</td><td align="center">htmls</td><td></td><td align="center">.html</td></tr><tr><td>Html Debug</td><td align="center">htmld</td><td>Html used for Debug</td><td align="center">.html</td></tr><tr><td>Html JOD</td><td align="center">htmljod</td><td>Converted from excel report using JODConverter</td><td align="center">.html</td></tr><tr><td>PDF</td><td align="center">pdf</td><td>Converted from excel report using JODConverter</td><td align="center">.pdf</td></tr><tr><td>CSV</td><td align="center">csv</td><td>Comma Separated Value(s)</td><td align="center">.csv</td></tr><tr><td>XML</td><td align="center">xml</td><td></td><td align="center">.xml</td></tr></tbody></table>
 
 ## Tables
 
@@ -259,16 +270,16 @@ a.Barcode(i_Text       => /* barcode text data */,
 
 #### Qrcode
 
+Alternative to `a.Add_Image(i_Cell_Type ⇒ 'Q', i_Val ⇒ 'test_qrcode', ...)`;
+
 ```plsql
 a.Qrcode(i_Text       => /* qrcode text data */,
-          i_Style_Name => /* style */,
-          i_Colspan    => /* number of cols */,
-          i_Rowspan    => /* number of rows */,
-          i_Width      => /* width in pixels */,
-          i_Height     => /* height in pixels */);
+         i_Style_Name => /* style */,
+         i_Colspan    => /* number of cols */,
+         i_Rowspan    => /* number of rows */,
+         i_Width      => /* width in pixels */,
+         i_Height     => /* height in pixels */);
 ```
-
-Alternative to `a.Add_Image(i_Cell_Type ⇒ 'Q', i_Val ⇒ 'test_qrcode', ...)`;
 
 #### Gs1\_Data\_Matrix
 
