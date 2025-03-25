@@ -2,9 +2,9 @@
 icon: table-cells
 layout:
   title:
-    visible: false
-  description:
     visible: true
+  description:
+    visible: false
   tableOfContents:
     visible: true
   outline:
@@ -42,7 +42,7 @@ Once the workbook is opened with styles, it functions as a standard workbook but
 
 Both functions have their overloaded versions where the first parameter can be a `HashMap`. In this case, the map must contain a key `rt`, with its value specifying the report type.
 
-After opening report it should be closed at the end using `b_Report.Close_Book`&#x20;
+After opening report it should be closed at the end using `b_Report.Close_Book`
 
 {% hint style="warning" %}
 There cannot be opened more than one workbook at a time
@@ -163,8 +163,6 @@ The `i_Name` and `p_Table` parameters are required, while all other parameters a
 
 <table><thead><tr><th>Parameter</th><th width="257">Description</th><th>Sample input</th></tr></thead><tbody><tr><td>i_Name</td><td>Accepts <code>varchar2</code>, table name</td><td><code>test_name</code></td></tr><tr><td>i_Table</td><td>It accepts a <code>b_Table</code> object, and once added to the sheet, it will be closed and no longer usable.</td><td></td></tr><tr><td>i_Param</td><td>Takes <code>varchar2</code></td><td></td></tr><tr><td>i_Zoom</td><td>Takes a number between 25 and 100 to set the zoom level in percentages in the Excel.</td><td><code>50</code></td></tr><tr><td>i_No_Gridlines</td><td><code>boolean</code> type; when set to <code>false</code>, the report prints with Excel's cell gridlines.</td><td><code>false</code></td></tr><tr><td><p>i_Split_Horizontal</p><p>i_Split_Vertical</p></td><td>Both accept a number, and when the split feature is enabled in Excel, the table will be divided into four sections based on the specified number of cells.</td><td><code>5</code></td></tr><tr><td><p>i_Page_Header</p><p>i_Page_Footer</p><p>i_Page_Top</p><p>i_Page_Bottom</p><p>i_Page_Left</p><p>i_Page_Right</p></td><td>All are of type <code>number</code> and set the respective spacing for each value when printing in Excel.</td><td><code>10</code></td></tr><tr><td>i_Fit_To_Page</td><td><code>boolean</code> type; when set to <code>true</code>, it enables Excel's "Fit to Page" feature.</td><td><code>true</code></td></tr><tr><td>i_Landscape</td><td><code>boolean</code> type and makes page landscapge in Excel</td><td><code>true</code></td></tr><tr><td>i_Hidden</td><td><code>boolean</code> type; when set to <code>true</code>, it hides the sheet from the Excel UI.</td><td><code>true</code></td></tr><tr><td>i_Wrap_Merged_Cells</td><td><code>boolean</code> type; when set to <code>true</code>, merged cells will have the wrap text option enabled in Excel.</td><td><code>true</code></td></tr></tbody></table>
 
-
-
 ## Data
 
 We will explore various methods of inserting data into a cell:
@@ -235,7 +233,7 @@ a.Add_Image(i_Cell_Type => /* type */,
 
 `i_Style_Name`, `i_Collspan`, and `i_Rowspan` are described [here](biruni-report.md#text-data) and are not included in the following table.
 
-<table><thead><tr><th width="170.5999755859375">Parameter</th><th>Description</th><th>Sample</th></tr></thead><tbody><tr><td>i_Cell_Type</td><td>Takes a single-letter <code>varchar2</code> value and selects the corresponding image type.</td><td><p>Image: <code>I</code></p><p>Barcode: <code>B</code></p></td></tr><tr><td>i_Val</td><td>Accepts a <code>varchar2</code> value and contains image data.</td><td><code>test_barcode</code></td></tr><tr><td>i_Width</td><td><code>number</code> data type and sets width of the output image</td><td><code>400</code></td></tr><tr><td>i_Height</td><td>number data type and sets height of the output imag</td><td><code>300</code></td></tr><tr><td>i_Keep_Ratio</td><td><code>boolean</code> data type and if set <code>true</code>, maintains the image's aspect ratio while fitting within the given width and height. Default: <code>true</code>.</td><td><code>false</code></td></tr><tr><td>i_Format</td><td>Accepts <code>varchar2</code> data type and  specifies the output format of the image, choosing from JPG, JPEG, PNG, BMP, or GIF. If an incorrect value is provided, gets default value JPG.</td><td><code>png</code></td></tr><tr><td>i_Label</td><td>Accepts <code>varchar2</code> and used for Barcode images</td><td><code>test_label</code></td></tr></tbody></table>
+<table><thead><tr><th width="170.5999755859375">Parameter</th><th>Description</th><th>Sample</th></tr></thead><tbody><tr><td>i_Cell_Type</td><td>Takes a single-letter <code>varchar2</code> value and selects the corresponding image type.</td><td><p>Image: <code>I</code></p><p>Barcode: <code>B</code></p></td></tr><tr><td>i_Val</td><td>Accepts a <code>varchar2</code> value and contains image data.</td><td><code>test_barcode</code></td></tr><tr><td>i_Width</td><td><code>number</code> data type and sets width of the output image</td><td><code>400</code></td></tr><tr><td>i_Height</td><td>number data type and sets height of the output imag</td><td><code>300</code></td></tr><tr><td>i_Keep_Ratio</td><td><code>boolean</code> data type and if set <code>true</code>, maintains the image's aspect ratio while fitting within the given width and height. Default: <code>true</code>.</td><td><code>false</code></td></tr><tr><td>i_Format</td><td>Accepts <code>varchar2</code> data type and specifies the output format of the image, choosing from JPG, JPEG, PNG, BMP, or GIF. If an incorrect value is provided, gets default value JPG.</td><td><code>png</code></td></tr><tr><td>i_Label</td><td>Accepts <code>varchar2</code> and used for Barcode images</td><td><code>test_label</code></td></tr></tbody></table>
 
 #### Image data
 
@@ -300,18 +298,18 @@ Biruni provides a solid styling system for workbooks, supporting colors, fonts, 
 
 ### Constants
 
-Constants play a crucial role in `biruni_report` by ensuring consistency, reusability, and maintainability. They allow predefined values for styles, formatting, and layout to be stored and referenced throughout the report generation process.&#x20;
+Constants play a crucial role in `biruni_report` by ensuring consistency, reusability, and maintainability. They allow predefined values for styles, formatting, and layout to be stored and referenced throughout the report generation process.
 
 #### Constants for the border:
 
 * constants: `b_Null`, `b_Hair`, `b_Thin`, `b_Thick`, `b_Double`, `b_Dotted`, `b_Dashed`, `b_Dash_Dot`, `b_Dash_Dot_Dot`, `b_Medium`, `b_Medium_Dashed`, `b_Medium_Dash_Dot`, `b_Medium_Dot_Dot`.
-* data type: `Option_Varchar2`&#x20;
+* data type: `Option_Varchar2`
 * usage: `b_Report.border_type` (e.g. `b_Report.b_Medium_Dashed`)
 
 #### Constants for the text alighnment:
 
 * constants: a\_Left, a\_Center, a\_Right, a\_Top, a\_Middle, `a_Bottom`.
-* data type: `Option_Number`&#x20;
+* data type: `Option_Number`
 * usage: `b_Report.text_alignment` (e.g. `b_Report.a_Middle`)
 
 ### Style parameters
@@ -399,4 +397,3 @@ These styles can be referenced by their style names and include the following op
 * header — `header`, `header_left`, `header_right`
 * body — `body`, `body_right`, `body_cneter`, `body_summ`
 * footer — `footer`, `footer_left`, `footer_right`, `footer_summ`
-

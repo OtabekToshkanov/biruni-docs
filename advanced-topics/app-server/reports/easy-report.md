@@ -155,7 +155,7 @@ Easy Report supports three types of image data:
 * barcode
 * qrcode
 
-To use image data, a `Gmap` object must be assigned to a keyword with specific fields.&#x20;
+To use image data, a `Gmap` object must be assigned to a keyword with specific fields.
 
 ```plsql
 ---- declare
@@ -211,7 +211,7 @@ Definitions:
 
 Template usage:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/scalar_values_usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/scalar_values_usage (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Vertical and horizonal loops
 
@@ -273,24 +273,24 @@ Currently, the page breakable feature applies only to rows.
 
 {% stepper %}
 {% step %}
-### Create a form
+#### Create a form
 
 Create a form with "Access position" set to "Document report" and the "Easy Report" checkbox enabled. When "Easy Report" is enabled in the form info, the form requires the `:definitions` route.
 {% endstep %}
 
 {% step %}
-### Create a UI package for the form
+#### Create a UI package for the form
 {% endstep %}
 
 {% step %}
-### Create the necessary route actions in the package:
+#### Create the necessary route actions in the package:
 
 There are two actions should be created in the UI package:
 
 1. Function that returns definitions. The function should be attached to `:definitions` route.
 2. Procedure that executes easy report generation
 
-#### Generating easy report
+**Generating easy report**
 
 <pre class="language-plsql"><code class="lang-plsql">Uit_Ker.Run_Report(i_Template_Id => /* Template id (number) */,
 <strong>                   i_Data        => /* Gmap data */,
@@ -300,14 +300,12 @@ There are two actions should be created in the UI package:
 `i_Template_Id`, and `i_Data` parameters are required, but all the other ones are optional
 
 <table><thead><tr><th width="261">Parameter</th><th width="102">Data type</th><th>Description</th></tr></thead><tbody><tr><td>i_Template_Id</td><td><code>number</code></td><td>Accepts , gets template by its id</td></tr><tr><td>i_Data</td><td><code>Gmap</code></td><td>Data source for report generation. Complete information is provided <a href="easy-report.md#data">here</a>.</td></tr><tr><td>i_File_Name</td><td><code>varchar2</code></td><td>File name when downloaded</td></tr><tr><td>i_Check_Access</td><td><code>boolean</code></td><td>User access can be controlled if set <code>true</code></td></tr><tr><td>i_Is_Pdf</td><td><code>boolean</code></td><td>Generates a PDF file instead of a standard Excel file if LibreOffice is installed on the application server.</td></tr><tr><td>i_View_Mode</td><td><code>boolean</code></td><td>stands for the enabling or disabling the onlyoffice service. When it is set to <strong><code>true</code></strong> easy-report returns inline view on the browser via onlyoffice service.</td></tr><tr><td>i_Embedded</td><td><code>boolean</code></td><td>Minified/embedded mode of the OnlyOffice service. When set to <code>true</code>, Easy Report returns a minified inline view in the browser via the OnlyOffice service. Works when <code>i_View_Mode</code> is set to <code>true</code>.</td></tr></tbody></table>
-
-
 {% endstep %}
 
 {% step %}
-### Create report template
+#### Create report template
 
-`Ker_Core.Head_Template_Save` procedure creates report template.&#x20;
+`Ker_Core.Head_Template_Save` procedure creates report template.
 
 ```plsql
 declare
