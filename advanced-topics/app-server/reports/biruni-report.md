@@ -61,7 +61,7 @@ Biruni's report structure is organized into a hierarchical format, ensuring clea
 * **Row** — A collection of cells
 * **Cell** — The smallest unit where data is written and styles are applied.
 
-<figure><img src="../../../.gitbook/assets/b_report_hierarchy.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/b_report_hierarchy.png" alt=""><figcaption></figcaption></figure>
 
 ## Tables
 
@@ -118,7 +118,7 @@ When a table is newly created, data cannot be inserted immediately. Ensure that 
 
 The image illustrates how the cursor moves. When a new row is created using `New_Row()`, the cursor moves to the beginning of that row. Each `Data()` command inserts a value into the current cell and then shifts the cursor one cell to the right.
 
-<figure><img src="../../../.gitbook/assets/b_table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/b_table.png" alt=""><figcaption></figcaption></figure>
 
 ### Page settings
 
