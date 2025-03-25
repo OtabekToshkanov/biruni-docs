@@ -19,7 +19,7 @@ Easy Report is a customizable, user-friendly, template-based reporting tool. Use
 
 Easy report consists of three main components as shown below:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/easy_report.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/easy_report.jpg" alt=""><figcaption></figcaption></figure>
 
 Both **"Data"** and **"Definitions"** are written in PL/SQL within UI packages. In contrast, the **"Template"** is an Excel document that utilizes keywords from **"Definitions"**. During report generation, these keywords are replaced with corresponding **"Data"** values.
 
@@ -211,7 +211,7 @@ Definitions:
 
 Template usage:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/scalar_values_usage (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/scalar_values_usage.png" alt=""><figcaption></figcaption></figure>
 
 ### Vertical and horizonal loops
 
@@ -251,13 +251,13 @@ Definitions:
 
 Template usage:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/list_values_usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/list_values_usage.png" alt=""><figcaption></figcaption></figure>
 
 ### Page breakables
 
 Page breakable ensures that content is properly divided based on page size in an Excel sheet. It prevents unintended separation of components across pages, keeping related elements together, as illustrated in the image:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/page_breakable.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/page_breakable.jpg" alt=""><figcaption></figcaption></figure>
 
 The special keyword `(#BREAK#)` is used to enable this feature. You can place this keyword in any cell. If `(#BREAK#)` is placed inside a loop item, it will apply to each item within the loop.
 
@@ -267,7 +267,7 @@ Currently, the page breakable feature applies only to rows.
 
 #### Example usage:
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/page_break_component.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/page_break_component.png" alt=""><figcaption></figcaption></figure>
 
 ## Usage
 
@@ -325,6 +325,6 @@ end;
 
 After executing the code, the template report will be inserted into `ker_templates` table. In order to modify the templates go to `/biruni/ker/head_template_list` form. Select the template that you have added then click edit button.
 
-<figure><img src="../../../.gitbook/assets/advanced-topics/app-server/reports/template_example.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/template_example.jpg" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
