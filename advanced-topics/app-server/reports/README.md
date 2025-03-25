@@ -44,6 +44,3 @@ Easy Report is a flexible, template-based reporting tool that allows users to de
 {% content-ref url="easy-report.md" %}
 [easy-report.md](easy-report.md)
 {% endcontent-ref %}
-
-
-

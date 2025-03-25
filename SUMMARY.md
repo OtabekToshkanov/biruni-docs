@@ -69,7 +69,7 @@
 
 ## ADVANCED TOPICS
 
-* [Reports](advanced-topics/reports/README.md)
-  * [Biruni report](advanced-topics/reports/biruni-report.md)
-  * [Lazy report](advanced-topics/reports/lazy-report.md)
-  * [Easy report](advanced-topics/reports/easy-report.md)
+* [Reports](advanced-topics/app-server/reports/README.md)
+  * [Biruni report](advanced-topics/app-server/reports/biruni-report.md)
+  * [Lazy report](advanced-topics/app-server/reports/lazy-report.md)
+  * [Easy report](advanced-topics/app-server/reports/easy-report.md)
