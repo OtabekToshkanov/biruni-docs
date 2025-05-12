@@ -1,0 +1,70 @@
+# Project structure
+
+To build a project on top of the Biruni framework, it is crucial to follow a specific folder structure that Biruni recognizes.
+
+* **Folder Organization:** The folder structure must align with the expectations of the Biruni framework to ensure correct operation and functionality.
+* **Project Rules:** There are predefined conventions in place for organizing files, modules, and dependencies in a way that keeps the files organized throughout all projects, following the same structure.
+
+## Folder structure
+
+* project code — `lms`
+* module code — `cr`
+
+```
+📁 lms                     -- project code (e.g. biruni, core)            
+├── 📁 main
+│   ├── 📁 page            -- web pages, assets, translates
+│   └── 📁 oracle          -- backend logic
+├── 📁 release             -- database migrations
+├── 📄 README.md           -- description
+├── 📄 VERSION.md          -- project version
+└── 📄 requirement.txt     -- project dependencies
+```
+
+## Oracle
+
+```
+📁 oracle
+├── 📁 setup
+│   ├── 📁 init
+│   │   └── 📄 project.sql
+│   └── 📄 lms.pck
+├── 📁 module
+│   ├── 📁 cr
+│   │   ├── 📁 setup
+│   │   │   ├── 📄 cr_table.sql
+│   │   │   ├── 📄 cr_sequence.sql
+│   │   │   └── ...
+│   │   ├── 📄 cr_api.pck
+│   │   ├── 📄 cr_next.pck
+│   │   └── ...
+│   └── ...
+├── 📁 ui
+├── 📁 uis
+├── 📄 start.sql
+├── 📄 start_all.sql
+├── 📄 start_ui.sql
+└── 📄 start_uis.sql
+```
+
+## Page
+
+```
+📁 page
+├── 📁 form
+│   └── 📁 lms
+│       ├── 📁 cr
+│       └── ...
+├── 📁 lang
+│   ├── 📁 en
+│   │   └── 📁 lms
+│   │       ├── 📁 cr
+│   │       └── ...
+│   ├── 📁 ru
+│   │   └── 📁 lms
+│   │       ├── 📁 cr
+│   │       └── ...
+│   └── ...
+├── 📁 resource               -- contains static files (images, svg, ...)
+└── 📁 config                 -- project title, logo configs
+```

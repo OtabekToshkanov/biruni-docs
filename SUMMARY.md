@@ -23,8 +23,8 @@
 ***
 
 * [LMS](lms/README.md)
+  * [Project structure](lms/project-structure.md)
   * [Project setup](lms/project-setup.md)
-  * [Architecture](lms/architecture.md)
   * [Table structure](lms/table-structure.md)
   * [Basic forms](lms/basic-forms.md)
   * [Advanced forms](lms/advanced-forms.md)
