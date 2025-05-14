@@ -19,7 +19,7 @@ We are going to start the forms with subjects with detailed steps:
 3. Set access position to the `Form`.
 4. Save the form.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/add-form.png" alt=""><figcaption></figcaption></figure>
 
 5.  Create a **UI package** for **subjects** that includes both **add** and **edit** route actions.
 
@@ -36,7 +36,7 @@ We are going to start the forms with subjects with detailed steps:
     4. The UI package name for the `subject``+add` route will be:\
        &#xNAN;**`ui_lms1`**.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/path-id.png" alt=""><figcaption></figcaption></figure>
 
 6. We are going to create the **add** and **edit** actions in the `subject.pck`, which will utilize the `cr_api.pck` API functions to save the data. Additionally, we need to include **model procedures** for both the **add** and **edit** routes to provide the initial data when the page is first opened.
 
@@ -86,7 +86,7 @@ end;
 7. Create the corresponding file in the LMS project directory: `lms/main/page/form/cr/subject.html`.\
    This `subject.html` file includes both **add** and **edit** functionalities, each accessible through different routes. Alternatively, you can simply click the **Developer Toolbar** button, which automatically generates the HTML file and opens it in the selected editor.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Open via Developer toolbar</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/open-file.png" alt=""><figcaption><p>Open via Developer toolbar</p></figcaption></figure>
 
 8. Below is the HTML file for the form, which supports both **add** and **edit** routes simultaneously.
 
@@ -145,7 +145,7 @@ page.ctrl(function (scope, model) {
 
 9. Lastly, to connect the routes, open the **Developer Toolbar**, go to **Form Info**, and navigate to the **Route** tab.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>/lms/cr/subject+add routes</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/form-info-route.png" alt=""><figcaption><p>/lms/cr/subject+add routes</p></figcaption></figure>
 
 10. Add the `/lms/cr/subject+edit` form, just like we did for `subject+add`.
 
@@ -287,7 +287,7 @@ page.ctrl(function (scope, model, fi, t) {
 
         In the Routes tab, it must be connected to the `Delete` procedure of the corresponding UI package.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/form-actions.png" alt=""><figcaption></figcaption></figure>
 
 #### Translates
 

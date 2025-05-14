@@ -38,4 +38,4 @@ layout:
     ```
 3. Inserted `plugin.js` to md\_projects.web\_plugin\_file.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/plugin-js.png" alt=""><figcaption></figcaption></figure>

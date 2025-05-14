@@ -89,7 +89,7 @@ We are going to start by adding the necessary organization and role forms to the
 
 1. Navigate to Developer → Form → Projects
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/project-menus.png" alt=""><figcaption></figcaption></figure>
 
 2. Go to `Menus` form of `lms` project, then create first layer menu with any name (e.g. `Main`).
 3. Open the `child menus` of the menu you just created. This will allow you to add a second layer of menus, including child form menus.
@@ -98,7 +98,7 @@ We are going to start by adding the necessary organization and role forms to the
 * `/biruni/md/filial_list`
 * `/biruni/md/role_list`
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/add-menu-form.png" alt=""><figcaption></figcaption></figure>
 
 ### Create new filial
 

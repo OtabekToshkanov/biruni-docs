@@ -2,7 +2,7 @@
 
 In order to build the courses module, several database tables are required.
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/guides/lms/table-structure.png" alt=""><figcaption></figcaption></figure>
 
 ## Description
 
