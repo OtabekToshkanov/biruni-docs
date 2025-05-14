@@ -88,7 +88,7 @@ end Cr_Pref;
 
 #### Api package
 
-Next, we'll create the api package for our module tables, which implements DML operations such as insert, update, and delete. These procedures are used by UI packages to manage data interactions.
+Next, we'll create the api package for our module tables, which implements DML operations such as insert, update, and delete. These procedures are used by UI packages to manage data interactions. The guide will provide some of the API procedures, and the rest will be left for you to implement.
 
 For our **reference tables** we are going to use very simple api procedure, folowing code represents `cr_subjects` table example save, delete procedures:
 
@@ -106,8 +106,12 @@ end;
 ) is
 begin
   z_Cr_Subjects.Delete_One(i_Company_Id => i_Company_Id, i_Subject_Id => i_Subject_Id);
-end;
+end; 
 </code></pre>
+
+Write save, delete procedures for `cr_rooms` as well.
+
+***
 
 For **entity tables** like `cr_teachers` and `cr_students`, the logic becomes more complex due to their connection with Biruni’s `md_users` table, along with associated roles and filials. The following code demonstrates the `save` and `delete` functions for the `cr_students` table:
 
@@ -217,6 +221,10 @@ Here, `md_users` and `md_persons` tables provides additional user data for stude
 
 When saving a student to the database, the data must be inserted into three tables in sequence: first into `md_persons`, then `md_users`, and finally into `cr_students`. After adding the user to `md_users`, the student is assigned to the appropriate filial and attached to a role. Detaching the role beforehand is essential when editing an existing student to ensure any previous role assignments are cleared.
 
+Write the `Teacher_Save` and `Teacher_Delete` procedures in the same way we did for students.
+
+***
+
 For relational tables like `cr_teacher_subjects`, the logic is straightforward: these tables simply link existing records (e.g., teachers and subjects) without additional business logic, typically involving basic insert and delete operations.
 
 ```sql
@@ -246,6 +254,10 @@ begin
                                    i_Subject_Id => i_Subject_Id);
 end;
 ```
+
+There should be an API for the attach/detach procedures for course students, placed below the courses API procedures.
+
+***
 
 The `cr_courses` save procedure is also straightforward, with one additional step: after saving the course, it automatically generates lesson records for the next 30 days based on the course schedule.
 
@@ -309,3 +321,8 @@ begin
 end;
 ```
 
+For the lesson tables, we only need an API to save the data, as they will be deleted using the foreign key cascade method: `Lesson_Save`, `Lesson_Student_Save`.
+
+## Execute packages
+
+After creating all three packages we have written, execute them in the following order: `cr_next.pck`, `cr_pref.pck`, `cr_api.pck`. Once this is done, we have completed the CR module files.

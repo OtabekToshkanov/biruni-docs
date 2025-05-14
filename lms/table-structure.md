@@ -197,3 +197,13 @@ create table cr_lesson_students(
   constraint cr_lesson_students_f2 foreign key (company_id, course_id, student_id) references cr_course_students(company_id, course_id, student_id) on delete cascade
 ) tablespace GWS_DATA;
 ```
+
+### Z package
+
+The tables provided above meet all the requirements of the courses module. After creating all the tables and sequences in the specified order, we need to generate a Z package for these tables to simplify future DML operations:
+
+```sql
+execute fazo_z.run();
+-- or execute it for only cr module, rather than global
+execute fazo_z.run('cr');
+```

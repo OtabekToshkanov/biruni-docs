@@ -27,8 +27,8 @@
   * [Project setup](lms/project-setup.md)
   * [Table structure](lms/table-structure.md)
   * [Module setup](lms/module-setup.md)
-  * [Basic forms](lms/basic-forms.md)
-  * [Advanced forms](lms/advanced-forms.md)
+  * [Forms](lms/forms.md)
+  * [Final steps](lms/final-steps.md)
 
 ## Data / Business Logic
 
