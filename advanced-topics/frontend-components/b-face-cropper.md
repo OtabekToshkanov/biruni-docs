@@ -32,7 +32,7 @@ function openCropper($file) {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/face-mask.png" alt=""><figcaption></figcaption></figure>
 
 ## Example without face shape:
 
@@ -44,7 +44,7 @@ function openCropper($file) {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/face-round.png" alt=""><figcaption></figcaption></figure>
 
 ## Hotketys:
 

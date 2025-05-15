@@ -53,7 +53,7 @@ Before implementing, ensure that entity tables have a `modified_id` column.
 2. Query your data starting from `start_id` and fetch the first `limit` rows.
 3. Return the result of the function **`Uit_Mx.Prepare_Api_Response`** to add `count` and `next_cursor` properties into your response data.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/advanced-topics/oracle-modules/extra-topics/pagination.png" alt=""><figcaption></figcaption></figure>
 
 #### Example Structure of Result
 
@@ -92,7 +92,7 @@ This method uses the **`fazo_query`** mechanism under the hood. Which lets you *
 
 1. Run `b.run_query` to execute the `fazo_query`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/advanced-topics/oracle-modules/extra-topics/query.png" alt=""><figcaption></figcaption></figure>
 
 #### Example Structure of Result
 

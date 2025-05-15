@@ -211,7 +211,7 @@ Definitions:
 
 Template usage:
 
-<figure><img src="../../.gitbook/assets/advanced-topics/reports/scalar_values_usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/reports/scalar_values_usage (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Vertical and horizonal loops
 
@@ -273,17 +273,17 @@ Currently, the page breakable feature applies only to rows.
 
 {% stepper %}
 {% step %}
-#### Create a form
+**Create a form**
 
 Create a form with "Access position" set to "Document report" and the "Easy Report" checkbox enabled. When "Easy Report" is enabled in the form info, the form requires the `:definitions` route.
 {% endstep %}
 
 {% step %}
-#### Create a UI package for the form
+**Create a UI package for the form**
 {% endstep %}
 
 {% step %}
-#### Create the necessary route actions in the package:
+**Create the necessary route actions in the package:**
 
 There are two actions should be created in the UI package:
 
@@ -303,7 +303,7 @@ There are two actions should be created in the UI package:
 {% endstep %}
 
 {% step %}
-#### Create report template
+**Create report template**
 
 `Ker_Core.Head_Template_Save` procedure creates report template.
 

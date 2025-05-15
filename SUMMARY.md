@@ -22,7 +22,13 @@
 
 ***
 
-* [LMS](lms.md)
+* [LMS](lms/README.md)
+  * [Project structure](lms/architecture.md)
+  * [Project setup](lms/project-setup.md)
+  * [Table structure](lms/table-structure.md)
+  * [Module setup](lms/module-setup.md)
+  * [Forms](lms/forms.md)
+  * [Final steps](lms/final-steps.md)
 
 ## Data / Business Logic
 

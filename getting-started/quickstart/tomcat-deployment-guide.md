@@ -25,7 +25,7 @@ layout:
 
 ***
 
-## [Oracle Setup](broken-reference)
+## [Oracle Setup](broken-reference/)
 
 ***
 
@@ -33,7 +33,7 @@ layout:
 
 {% stepper %}
 {% step %}
-#### Download Project Files
+**Download Project Files**
 
 From [Biruni Releases](https://github.com/greenwhite/biruni/releases) go to **Assets** section and download:
 
@@ -44,7 +44,7 @@ From [Biruni Releases](https://github.com/greenwhite/biruni/releases) go to **As
 {% endstep %}
 
 {% step %}
-#### Application Installation
+**Application Installation**
 
 1. Deploy application
    1. Locate your tomcat directory
@@ -78,7 +78,7 @@ From [Biruni Releases](https://github.com/greenwhite/biruni/releases) go to **As
 {% endstep %}
 
 {% step %}
-#### Configuration Setup
+**Configuration Setup**
 
 1. Initial Tomcat configuration
    1. Navigate to <mark style="color:orange;">**`tomcat/bin/`**</mark>
@@ -100,7 +100,18 @@ biruni.dev.projects-folder=YOUR_PROJECTS_LOCATION
 {% endstep %}
 
 {% step %}
-#### Application Launch
+**Biruni pages Setup (for development version)**
+
+For convenience and better codebase management, developer version project pages are maintained separately. Follow these steps to install Biruni pages into the project:
+
+1. Navigate to <mark style="color:orange;">`YOUR_PROJECTS_LOCATION`</mark>&#x20;
+2. [Clone biruni](maven-setup-guide.md#clone-the-repository) source code
+
+In the main folder, there's a <mark style="color:orange;">`pages`</mark> directory that contains all HTML form pages, language files, resources, and some configs of biruni.
+{% endstep %}
+
+{% step %}
+**Application Launch**
 
 1.  Start applicatoin
 
@@ -115,7 +126,7 @@ biruni.dev.projects-folder=YOUR_PROJECTS_LOCATION
     2. Enter URL: <mark style="color:orange;">**`http://localhost:8080/YOUR_PROJECT_NAME`**</mark>
 
     <figure><img src="../../.gitbook/assets/getting-started/quickstart/login.png" alt=""><figcaption></figcaption></figure>
-3. [Log in as admin](broken-reference)
+3. [Log in as admin](broken-reference/)
 {% endstep %}
 {% endstepper %}
 
@@ -123,7 +134,7 @@ biruni.dev.projects-folder=YOUR_PROJECTS_LOCATION
 
 ## Troubleshooting
 
-### [Database Setup Issues](broken-reference)
+### [Database Setup Issues](broken-reference/)
 
 ### Deployment Issues
 
