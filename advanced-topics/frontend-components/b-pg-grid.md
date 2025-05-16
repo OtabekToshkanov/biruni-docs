@@ -58,7 +58,7 @@ There is no default keys set to navigate horizontally, that is why you must decl
 
 In an example below, we have used `ArrowRight(→)` and `ArrowLeft(←)` keys to achieve a result that we want:
 
-<figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/navigate-function-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/navigate-function-2 (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/arrow-left-right.png" alt=""><figcaption></figcaption></figure>
 

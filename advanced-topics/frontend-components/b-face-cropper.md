@@ -10,17 +10,12 @@ icon: face-viewfinder
 ## Face cropper modal can be called in any form as below:
 
 ```javascript
-page.faceCropper($file, onCrop, rounded, faceShaped);
+page.faceCropper($file, onCrop, rounded, maskEnabled, maskMode);
 ```
 
 ## Parameter descriptions:
 
-| parameter    | is required | default |      type      | description                                                     |
-| ------------ | :---------: | :-----: | :------------: | --------------------------------------------------------------- |
-| `$file`      |   required  |    -    | File(), Object | input image file, or object of photo with keys: SHA, name, type |
-| `onCrop`     |   required  |    -    |    Function    | Callback function which gets cropped image file as a parameter  |
-| `rounded`    |   optional  |  false  |     Boolean    | true - rounded cropbox, false - square cropbox                  |
-| `faceShaped` |   optional  |  false  |     Boolean    | true - face shaped cropbox, false - simple cropbox              |
+<table><thead><tr><th width="134">parameter</th><th width="136" align="center">is required</th><th width="159" align="center">default</th><th width="116" align="center">type</th><th>description</th></tr></thead><tbody><tr><td><code>$file</code></td><td align="center">required</td><td align="center">-</td><td align="center">File(), Object</td><td>input image file, or object of photo with keys: SHA, name, type</td></tr><tr><td><code>onCrop</code></td><td align="center">required</td><td align="center">-</td><td align="center">Function</td><td>Callback function which gets cropped image file as a parameter</td></tr><tr><td><code>rounded</code></td><td align="center">optional</td><td align="center">false</td><td align="center">Boolean</td><td>true - rounded cropbox, false - square cropbox</td></tr><tr><td><code>maskEnabled</code></td><td align="center">optional</td><td align="center">false</td><td align="center">Boolean</td><td><p>true - enables masked cropbox,</p><p>false - simple cropbox</p></td></tr><tr><td><code>maskMode</code></td><td align="center">optional</td><td align="center">if maskEnabled true then 1, else 0</td><td align="center">Number</td><td><p>0 - no mask,</p><p>1 - face mask,</p><p>2 - grid overlay</p></td></tr></tbody></table>
 
 ## Example with face shape:
 
@@ -45,6 +40,18 @@ function openCropper($file) {
 ```
 
 <figure><img src="../../.gitbook/assets/advanced-topics/frontend-componenets/face-round.png" alt=""><figcaption></figcaption></figure>
+
+## Example with grid overlay:
+
+```javascript
+function openCropper($file) {
+  page.faceCropper($file, croppedPhoto => {
+    d.photo = croppedPhoto;
+  }, true, true, 2);
+}
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Hotketys:
 
